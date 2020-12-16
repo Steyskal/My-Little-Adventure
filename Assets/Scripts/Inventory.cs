@@ -35,4 +35,19 @@ public class Inventory
 
         InventoryItemsChanged.Invoke();
     }
+
+    public bool RemoveItem(string itemName)
+    {
+        foreach (Item item in _items)
+        {
+            if(item.Name == itemName)
+            {
+                RemoveItem(item);
+
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
